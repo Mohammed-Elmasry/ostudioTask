@@ -64,7 +64,7 @@
         </style>
     </head>
 @extends('user.layout.base')
-    <body>
+    <body>  
     
     </body>
 </html>

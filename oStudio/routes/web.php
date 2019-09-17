@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/admin/dashboard', 'AdminsController@dashboard');
+
+Route::get('/products', 'ProductsController@index')->name("products");

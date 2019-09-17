@@ -2,10 +2,11 @@
 
 @section('content')
 <h1>Create New Product</h1>
-<form method="post" action="{{'/admin/store'}}">
+<form method="post" action="{{route('newProduct')}}">
+        @csrf
         <div class="form-group">
-          <label for="product_name">Product name</label>
-          <input name="product_name" type="text" class="form-control" aria-describedby="emailHelp" placeholder="product name.." required>
+          <label for="name">Product name</label>
+          <input name="name" type="text" class="form-control" aria-describedby="emailHelp" placeholder="product name.." required>
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">

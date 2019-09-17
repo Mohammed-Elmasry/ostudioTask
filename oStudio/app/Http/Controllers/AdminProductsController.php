@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class AdminProductsController extends Controller
 {
@@ -34,7 +35,16 @@ class AdminProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required'
+        ]);
+
+        $product = new Product();
+        $product->name = $request['name'];
+        $product->description = $request['description'];
+        $product->save();
+        return view('admin.create');
     }
 
     /**

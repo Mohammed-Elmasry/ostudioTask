@@ -5,7 +5,7 @@
         @if (count($products) > 0)
             <ul>
                 @foreach ($products as $product)
-                <a href="{{$product->id}}">
+                <a href="/products/{{$product->id}}">
                     <div class="jumbotron">
                             <li>{{$product->name}}</li>
                     <small><p>{{$product->description}}</p></small>

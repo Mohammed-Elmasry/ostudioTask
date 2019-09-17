@@ -27,6 +27,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+        return view('user.show')->with('product', $product);
     }   
 }

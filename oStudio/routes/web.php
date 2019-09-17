@@ -13,6 +13,9 @@
 
 
 //user routes
+
+use App\Http\Controllers\AdminProductsController;
+
 Route::get('/', function(){
     return view('welcome');
 });
@@ -21,3 +24,4 @@ Route::get('/products', 'ProductsController@index')->name("products");
 Route::get('/products/{id}', 'ProductsController@show');
 //admin routes
 Route::get('/admin/dashboard', 'AdminsController@dashboard');
+Route::get('/admin/create', 'AdminProductsController@create');

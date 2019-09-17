@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/dashboard', 'AdminsController@dashboard');
-
+//user routes
 Route::get('/products', 'ProductsController@index')->name("products");
+
+//admin routes
+Route::get('/admin/dashboard', 'AdminsController@dashboard');

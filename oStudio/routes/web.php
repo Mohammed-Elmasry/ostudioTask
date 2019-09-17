@@ -18,6 +18,6 @@ Route::get('/', function(){
 });
 
 Route::get('/products', 'ProductsController@index')->name("products");
-
+Route::get('/product/{id}', 'ProductsController@show');
 //admin routes
 Route::get('/admin/dashboard', 'AdminsController@dashboard');

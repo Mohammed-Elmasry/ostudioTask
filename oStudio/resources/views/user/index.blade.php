@@ -5,10 +5,12 @@
         @if (count($products) > 0)
             <ul>
                 @foreach ($products as $product)
+                <a href="{{$product->id}}">
                     <div class="jumbotron">
                             <li>{{$product->name}}</li>
                     <small><p>{{$product->description}}</p></small>
-                    </div>    
+                    </div>
+                </a>    
                 @endforeach
             </ul>    
         @else

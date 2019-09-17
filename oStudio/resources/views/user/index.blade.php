@@ -1,1 +1,2 @@
-<h1>index</h1>
+@extends('user.layout.base')
+

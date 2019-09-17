@@ -7,7 +7,7 @@
     <title>{{config('app.name')}}</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <link rel='stylesheet' type='text/css' href="{{asset('css/app.css')}}">
+    <link rel='stylesheet' type='text/css' href="{{asset('bootstrap.min.css')}}">
     <script src='main.js'></script>
 </head>
 <body>
@@ -23,16 +23,7 @@
                       <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="about">About</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="posts">Posts</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="contact">Contact Us</a>
+                      <a class="nav-link" href="about">Products</a>
                     </li>
                   </ul>
                 </div>

@@ -13,6 +13,7 @@
                 </a>    
                 @endforeach
             </ul>    
+            {{$products->links()}}
         @else
             <p>No Products Found!</p>
         @endif

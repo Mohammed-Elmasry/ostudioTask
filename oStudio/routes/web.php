@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', function () {
+
+//user routes
+Route::get('/', function(){
     return view('welcome');
 });
 
-//user routes
 Route::get('/products', 'ProductsController@index')->name("products");
 
 //admin routes

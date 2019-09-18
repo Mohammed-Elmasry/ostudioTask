@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-use App\Traits\UploadTrait;
 use Illuminate\Support\Str;
 
 class AdminProductsController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -51,7 +51,7 @@ class AdminProductsController extends Controller
             $name = Str::slug($request->input('name'))."_".time();
             $folder = '/uploads/images';
             $filepath = $folder . $name.  "." . $image->getClientOriginalExtension();
-            $this->UploadTrait->uploadOne($image, $folder, 'public', $name);
+            $this->uploadtrait->uploadOne($image, $folder, 'public', $name);
             $product->image = $filepath;
         }
         $product->save();

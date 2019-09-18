@@ -15,4 +15,3 @@ trait UploadTrait
         return $file;
     }
 }
-?>

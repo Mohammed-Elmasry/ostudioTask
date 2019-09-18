@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Traits\UploadTrait;
+use Illuminate\Support\Str;
 
 class AdminProductsController extends Controller
 {
@@ -47,7 +48,7 @@ class AdminProductsController extends Controller
         $product->description = $request['description'];
         if($request->has('img')){
             $image = $request->file('img');
-            $name = str_slug($request->input('name'))."_".time();
+            $name = Str::slug($request->input('name'))."_".time();
             $folder = '/uploads/images';
             $filepath = $folder . $name.  "." . $image->getClientOriginalExtension();
             $this->uploadOne($image, $folder, 'public', $name);

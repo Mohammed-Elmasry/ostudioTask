@@ -101,6 +101,9 @@ class AdminProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        if(!is_null($product)){
+            $product->delete();
+        } 
     }
 }

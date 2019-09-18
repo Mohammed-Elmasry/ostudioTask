@@ -45,8 +45,9 @@ class AdminProductsController extends Controller
         ]);
 
         $product = new Product();
-        $product->name = $request['name'];
-        $product->description = $request['description'];
+        $product->name = filter_var($request['name'], FILTER_SANITIZE_STRING);
+        $product->description = filter_var($request['description'], FILTER_SANITIZE_STRING);
+        $product->description = filter_var($product->description, FILTER_SANITIZE_SPECIAL_CHARS);
         if($request->has('img')){
             $image = $request->file('img');
             $name = Str::slug($request->input('name'))."_".time();
@@ -56,7 +57,7 @@ class AdminProductsController extends Controller
             $product->image = $filepath;
         }
         $product->save();
-        return redirect()->back()->with(['status' => 'Product created successfully.']);
+        return view('admin.show')->with('product', $product);
     }
 
     /**
@@ -98,8 +99,8 @@ class AdminProductsController extends Controller
     {
         $product = Product::find($id);
         if(!is_null($product)){
-            $product->name = $request->name;
-            $product->description = $request->description;
+            $product->name = filter_var($request->name, FILTER_SANITIZE_STRING);
+            $product->description = filter_var($request->description, FILTER_SANITIZE_STRING);
             if($request->has('img')){
                 $image = $request->file('img');
                 $name = Str::slug($request->input('name'))."_".time();
@@ -110,7 +111,7 @@ class AdminProductsController extends Controller
             }
         }
         $product->save();
-        return view('admin.dashboard');
+        return view('admin.show')->with('product', $product);
     }
 
     /**

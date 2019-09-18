@@ -16,7 +16,7 @@
         <div class="col-md-3"style="float:right">  
                 <table>
                   <tr>  
-                    <button class="btn btn-secondary">Edit</button>
+                  <a href="/admin/{{$product->id}}/edit"><button class="btn btn-secondary">Edit</button></a>
                   </tr>
                   <tr>
                     <span> </span>

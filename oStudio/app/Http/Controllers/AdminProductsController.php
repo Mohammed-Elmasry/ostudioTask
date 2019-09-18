@@ -93,7 +93,21 @@ class AdminProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        if(!is_null($product)){
+            $product->name = $request->name;
+            $product->description = $request->description;
+            if($request->has('img')){
+                $image = $request->file('img');
+                $name = Str::slug($request->input('name'))."_".time();
+                $folder = '/uploads/images/';
+                $filepath = $folder . $name.  "." . $image->getClientOriginalExtension();
+                $this->uploadOne($image, $folder, 'public', $name);
+                $product->image = $filepath;
+            }
+        }
+        $product->save();
+        return view('admin.dashboard');
     }
 
     /**

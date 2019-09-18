@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
             <label for="img">Image</label>
-            <input type="file" name="img"/>
+        <input type="file" name="img"/>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

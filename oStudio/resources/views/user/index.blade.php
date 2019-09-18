@@ -8,7 +8,8 @@
                 <a href="/products/{{$product->id}}">
                     <div class="jumbotron">
                             <li>{{$product->name}}</li>
-                    <small><p>{{$product->description}}</p></small>
+                        <small><p>{{$product->description}}</p></small>
+                    <img src="{{$product->image}}" alt="product {{$product->id}} image">
                     </div>
                 </a>    
                 @endforeach

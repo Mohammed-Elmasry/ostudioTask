@@ -16,7 +16,7 @@ class AdminProductsController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.dashboard');
     }
 
     /**
@@ -26,7 +26,7 @@ class AdminProductsController extends Controller
      */
     public function create()
     {
-        return view('admin.create');       
+        return view('admin.create'); 
     }
 
     /**

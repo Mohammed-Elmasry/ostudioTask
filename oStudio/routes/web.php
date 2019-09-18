@@ -26,4 +26,4 @@ Route::get('/products/{id}', 'ProductsController@show');
 Route::get('/admin/', 'AdminProductsController@index')->name('adminHome');
 Route::get('/admin/create', 'AdminProductsController@create');
 Route::post('/admin/store', 'AdminProductsController@store')->name('newProduct');
-Route::delete('/admin/product/{id}', 'AdminProductsController@delete')->name('remove');
+Route::delete('/admin/product/{id}', 'AdminProductsController@destroy')->name('remove');

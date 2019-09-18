@@ -7,11 +7,11 @@
         {{ method_field('PUT') }}
         <div class="form-group">
           <label for="name">Product name</label>
-          <input name="name" type="text" class="form-control" aria-describedby="emailHelp" placeholder="product name.." required>
+        <input name="name" type="text" class="form-control" value="{{$product->name}}" placeholder="product name.." required>
         </div>
         <div class="form-group">
           <label for="description">Description</label>
-          <textarea name="description" class="form-control" id="exampleInputPassword1" rows="10" placeholder="Description" required></textarea>
+        <textarea name="description" class="form-control" value="{{$product->description}}"id="exampleInputPassword1" rows="10" placeholder="Description" required></textarea>
         </div>
         <div class="form-group">
             <label for="img">Image</label>

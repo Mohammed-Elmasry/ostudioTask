@@ -10,6 +10,10 @@
           <li>{{$product->name}}</li>
         <p>{{$product->description}}</p>
         <img src="{{$product->image}}" alt="product number {{$product->id}} image">
+        <div style="float:right">
+          <button class="btn btn-secondary">Edit</button>
+          <button class="btn btn-danger">Delete</button>
+        </div>
         </div>
       @endforeach
       </ul>

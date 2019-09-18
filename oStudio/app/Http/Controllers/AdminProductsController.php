@@ -16,7 +16,7 @@ class AdminProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::orderBy('name', 'asc')->paginate(3);
         return view('admin.dashboard')->with('products', $products);
     }
 

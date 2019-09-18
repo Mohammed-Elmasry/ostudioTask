@@ -16,7 +16,8 @@ class AdminProductsController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $products = Product::all();
+        return view('admin.dashboard')->with('products', $products);
     }
 
     /**

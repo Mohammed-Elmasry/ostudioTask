@@ -13,7 +13,8 @@ import { ProductsComponent } from './products/products.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AlertModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,7 +5,12 @@
     @if(count($products) > 0)
       <ul>
       @foreach ($products as $product)
-        <li>{{$product->name}}</li>
+        <br/>
+        <div class="jumbotron">
+          <li>{{$product->name}}</li>
+        <p>{{$product->description}}</p>
+        <img src="{{$product->image}}" alt="product number {{$product->id}} image">
+        </div>
       @endforeach
       </ul>
         {{$products->links()}}

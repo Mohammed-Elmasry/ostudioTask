@@ -12,7 +12,7 @@ export class ProductsComponent implements OnInit {
     id: 1,
     name: 'ORM',
     description: 'Object relational mapper',
-    image: ''
+    image: 'string', 
   };
 
 

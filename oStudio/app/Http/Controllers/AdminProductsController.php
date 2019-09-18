@@ -78,7 +78,10 @@ class AdminProductsController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.edit');
+        $product = Product::find($id);
+        if(!is_null($product)){
+            return view('admin.edit')->with('product', $product);
+        }
     }
 
     /**

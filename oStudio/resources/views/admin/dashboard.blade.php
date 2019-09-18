@@ -6,6 +6,7 @@
       <ul>
       @foreach ($products as $product)
         <br/>
+        <a href='/admin/product/{{$product->id}}'>
         <div class="container">
           <div class="jumbotron">
             <li>{{$product->name}}</li>
@@ -32,6 +33,7 @@
             </div>
         </div>
       </div>
+    </a>
       @endforeach
       </ul>
         {{$products->links()}}

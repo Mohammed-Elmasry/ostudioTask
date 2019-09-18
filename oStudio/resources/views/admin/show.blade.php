@@ -2,7 +2,12 @@
 
 
 @section('content')
-        <div class="container">
+<div class="container">
+    <div class="col">
+        <div class="row">
+            <a href="/admin/"><button class="btn btn-primary">Show all Products</button></a>
+        </div>
+    </div>
           <div class="jumbotron">
             <li>{{$product->name}}</li>
           <p>{{$product->description}}</p>

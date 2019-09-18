@@ -78,7 +78,7 @@ class AdminProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.edit');
     }
 
     /**

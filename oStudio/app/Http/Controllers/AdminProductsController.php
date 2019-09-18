@@ -8,8 +8,7 @@ use Illuminate\Support\Str;
 use App\Traits\UploadTrait;
 class AdminProductsController extends Controller
 {
-    use App\Traits\UploadTrait;
-
+    use UploadTrait;
     /**
      * Display a listing of the resource.
      *
@@ -50,7 +49,7 @@ class AdminProductsController extends Controller
         if($request->has('img')){
             $image = $request->file('img');
             $name = Str::slug($request->input('name'))."_".time();
-            $folder = '/uploads/images';
+            $folder = '/uploads/images/';
             $filepath = $folder . $name.  "." . $image->getClientOriginalExtension();
             $this->uploadOne($image, $folder, 'public', $name);
             $product->image = $filepath;

@@ -105,5 +105,6 @@ class AdminProductsController extends Controller
         if(!is_null($product)){
             $product->delete();
         } 
+        return view('admin.dashboard');
     }
 }

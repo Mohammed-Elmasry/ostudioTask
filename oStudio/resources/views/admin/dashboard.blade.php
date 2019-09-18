@@ -2,7 +2,7 @@
 @section('content')
   <h1>Products</h1>
   <a href="/admin/create"><button class="btn btn-primary">New</button></a>
-    @if(count($products) > 0)
+    @if(isset($products) && count($products) > 0)
       <ul>
       @foreach ($products as $product)
         <br/>
@@ -22,7 +22,11 @@
                     <span> </span>
                   </tr>
                   <tr>
-                    <button class="btn btn-danger">Delete</button>
+                      <form action="/admin/product/{{ $product->id }}" method="POST">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+                        <button class="btn btn-danger">Delete</button>            
+                    </form>
                   </tr>
                 </table>
             </div>
@@ -32,6 +36,12 @@
       </ul>
         {{$products->links()}}
     @else
-      <p>No Products to Display</p>
+      <div class="container">
+        <div class="col">
+          <div class="row">
+            <p>No Products to Display</p>
+          </div>
+        </div>
+      </div>
     @endif
   @endsection

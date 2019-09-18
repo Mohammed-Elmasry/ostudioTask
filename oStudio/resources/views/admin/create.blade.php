@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Create New Product</h1>
-<form method="post" action="{{route('newProduct')}}">
+<form method="post" action="{{route('newProduct')}}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label for="name">Product name</label>

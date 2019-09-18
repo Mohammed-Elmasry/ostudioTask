@@ -37,7 +37,8 @@ class AdminProductsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            '' => ''    
         ]);
 
         $product = new Product();

@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use Illuminate\Support\Str;
-
+use App\Traits\UploadTrait;
 class AdminProductsController extends Controller
 {
+    use App\Traits\UploadTrait;
 
     /**
      * Display a listing of the resource.

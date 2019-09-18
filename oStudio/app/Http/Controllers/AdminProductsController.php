@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Traits\UploadTrait;
 
 class AdminProductsController extends Controller
 {
@@ -38,14 +39,22 @@ class AdminProductsController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'description' => 'required',
-            '' => ''    
+            'img' => 'image|mimes:jpeg,png,jpg|max:2048'    
         ]);
 
         $product = new Product();
         $product->name = $request['name'];
         $product->description = $request['description'];
+        if($request->has('img')){
+            $image = $request->file('img');
+            $name = str_slug($request->input('name'))."_".time();
+            $folder = '/uploads/images';
+            $filepath = $folder . $name.  "." . $image->getClientOriginalExtension();
+            $this->uploadOne($image, $folder, 'public', $name);
+            $product->image = $filepath;
+        }
         $product->save();
-        return view('admin.create');
+        return redirect()->back()->with(['status' => 'Product created successfully.']);
     }
 
     /**

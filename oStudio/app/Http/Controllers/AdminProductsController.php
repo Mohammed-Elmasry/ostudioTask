@@ -51,7 +51,7 @@ class AdminProductsController extends Controller
             $name = Str::slug($request->input('name'))."_".time();
             $folder = '/uploads/images';
             $filepath = $folder . $name.  "." . $image->getClientOriginalExtension();
-            $this->uploadOne($image, $folder, 'public', $name);
+            $this->UploadTrait->uploadOne($image, $folder, 'public', $name);
             $product->image = $filepath;
         }
         $product->save();

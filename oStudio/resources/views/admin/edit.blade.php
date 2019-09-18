@@ -3,7 +3,8 @@
 @section('content')
 <h1>Update Product</h1>
 <form method="post" action="/admin/product/{{$product->id}}" enctype="multipart/form-data">
-        @csrf
+        {{ csrf_field() }}
+        {{ method_field('PUT') }}
         <div class="form-group">
           <label for="name">Product name</label>
           <input name="name" type="text" class="form-control" aria-describedby="emailHelp" placeholder="product name.." required>
